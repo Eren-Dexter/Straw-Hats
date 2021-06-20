@@ -2,6 +2,33 @@
 
  const store = {
   udvash: {
+    EngineeringFullCourse:{
+        course: "Engineering Full Course",
+        phx1 : [],
+        phx2 : [],
+        chem1 : [],
+        chem2 : [],
+        hm2 : [],
+        hm1: []
+    },
+    MedicalCrashRevision:{
+        course: "Medical Crash Revision",
+        phx1 : [],
+        phx2 : [],
+        chem1 : [],
+        chem2 : [],
+        hm2 : [],
+        hm1: []
+    },
+    DUCrashCourse:{
+        course: "DU Crash Course",
+        phx1 : [],
+        phx2 : [],
+        chem1 : [],
+        chem2 : [],
+        hm2 : [],
+        hm1: []
+    },
     VarsityKAExamBatch: {
         course: "Varsity KA Exam Batch",
         phx1 : [],
