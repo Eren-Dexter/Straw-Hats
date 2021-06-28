@@ -8,16 +8,20 @@ module.exports = {
       },
       height: {
         100: "550px",
+        99: "545px",
+      },
+      margin: {
+        13: "3.25rem",
       },
     },
-  },
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  plugins: [],
-  purge: {
-    content: ["./src/**/*.svelte"],
-    enabled: production,
+    future: {
+      removeDeprecatedGapUtilities: true,
+      purgeLayersByDefault: true,
+    },
+    plugins: [],
+    purge: {
+      content: ["./src/**/*.svelte"],
+      enabled: production,
+    },
   },
 };
