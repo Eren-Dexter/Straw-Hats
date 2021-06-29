@@ -12,8 +12,8 @@ import {
 } from "../../../../components"
 
 let page = 'index';
-
 export let examId;
+
 let data = {};
 const unsub = store.subscribe(db => {
     data = db;
@@ -77,14 +77,18 @@ const examInfo = data.hsc[window.location.pathname.split('/')[3]][examId.split("
             </div>
         </section>
         <div on:click={() => page='exam'} class="lg:ml-20  lg:mt-0 mt-16"><Button string="Take Exam" /></div>
-        <div on:click={() => page='answer'} class="lg:ml-16  lg:mt-0 mt-4"><Button string="Leaderboard" /></div>
-        <div on:click={() => page='leaderboard'} class="lg:ml-16  lg:mt-0 mt-4"><Button string="Show Result" /></div>
+        <div on:click={() => page='leaderboard'} class="lg:ml-16  lg:mt-0 mt-4"><Button string="Leaderboard" /></div>
+        <div on:click={() => page='answer'} class="lg:ml-16  lg:mt-0 mt-4"><Button string="Show Answer" /></div>
+       
     </div>
+
+    <div class="lg:ml-96 lg:-mt-28 lg:pl-32 xl:mr-96 lg:mr-48  rounded-lg bg-gray-100 lg:bg-white m-5 text-base p-6 -mt-16 pb-5  text-justify text-gray-900"><span class="text-primary font-semibold">NOTE: </span>You will get extra <span class="font-semibold">60 seconds</span> for filling up your name, email and other stuffs. And also you have to hit the submit button yourself before the time runs out. Remember, <span class="font-semibold">if the time runs out your answers won't get submitted automatically.</span></div>
+    
     {:else if page==='exam'}
-    <Exam link={examInfo.link} time={'0.1 mins'} examId={examId}/>
+    <Exam link={examInfo.link} time={examInfo.time} examId={examId}/>
         {:else if page==='answer'}
-        <Answer />
+        <Answer examInfo={examInfo}/>
         {:else}
-        <Leaderboard />
+        <Leaderboard examInfo={examInfo}/>
         {/if}
         </div>

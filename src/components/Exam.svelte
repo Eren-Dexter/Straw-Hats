@@ -79,7 +79,7 @@ onMount(() => {
 </script>
 
 <div>
-    <div class="flex justify-center items-end mb-5 lg:-mt-2 text-3xl">
+    <div class="flex justify-center items-end mb-5 lg:-mt-2 text-3xl font-light">
         <div>{extraTime ? '00:00:00' : crrntTime}</div>
         {#if extraTime}
         <div class="text-primary ml-3">{crrntTime}</div>

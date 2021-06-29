@@ -1,6 +1,21 @@
 import { writable } from "svelte/store";
 
 const data = {
+  daily: {
+    id: "01",
+    examId:
+      "hm1_1FAIpQLSc3KlZNHyfBEJcnJkhRwxNdtwOsUBYk-CTxBXz8KPtfE9Ni6Q/viewform",
+    subId: "hm1",
+    subject: "Higher Math 1st Paper",
+    exam: "Paper Final",
+    type: "MCQ",
+    marks: 50,
+    syllabus: "Full Book",
+    time: "30 mins",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSc3KlZNHyfBEJcnJkhRwxNdtwOsUBYk-CTxBXz8KPtfE9Ni6Q/viewform",
+    answerLink: null,
+    standings: null,
+  },
   hsc: {
     full: {
       course: "Full Preparation",
@@ -19,6 +34,13 @@ const data = {
           syllabus: "Full Book",
           time: "30 mins",
           link: "https://docs.google.com/forms/d/e/1FAIpQLSdP3hsJw3n_FSgqbt9ZN4vz7bsoMB5UFw3eSsZ4yka5H03GPQ/viewform",
+          answerLink:
+            "https://docs.google.com/forms/d/e/1FAIpQLSdP3hsJw3n_FSgqbt9ZN4vz7bsoMB5UFw3eSsZ4yka5H03GPQ/viewform",
+          standings: [
+            { name: "Tanvirul Islam Sajin", marks: 30 },
+            { name: "Portgas D. Ace", marks: 29 },
+            { name: "Monkey D. Luffy", marks: 28 },
+          ],
         },
         {
           id: "02",
@@ -160,6 +182,8 @@ const data = {
           syllabus: "Full Book",
           time: "30 mins",
           link: "https://docs.google.com/forms/d/e/1FAIpQLSdP3hsJw3n_FSgqbt9ZN4vz7bsoMB5UFw3eSsZ4yka5H03GPQ/viewform",
+          answerLink: null,
+          standings: null,
         },
         {
           id: "02",
@@ -256,6 +280,125 @@ const data = {
       bot: [],
       coursePath: "DUSpecial",
     },
+  },
+  blog: [
+    {
+      topic: "ANNOUNCEMENT",
+      head: "Aalo 3MinuteTutor Contest",
+      body: "Ahoy there! আশা করি সবাই ভালো আছো! আজ থেকে আমরা এই গ্রুপে একটি ক্যাম্পেইন চালু করতে যাচ্ছি, যার নাম - #3MinuteTutor! প্রতি সপ্তাহে আমরা তোমাদের দুটো টপিক আর দুটো সমস্যা দেবো। তোমরা এই চারটির যে কোনোটি নিয়ে একটি এক্সপ্লেইনার ভিডিও বানাবে। আমরা সপ্তাহ শেষে দুটি করে মোট আটটি ভিডিও বাছাই করে একটি রিল বানাবো। এই পোস্টের সাথের ছবিগুলোতে এবারের সপ্তাহের টপিক ও সমস্যাগুলো পাবে।",
+      fbLink:
+        "https://www.facebook.com/groups/aaloacademy/permalink/325720245715540/",
+      author: "Shajid Hasan Naeem",
+      rank: "CTO, Co-Founder",
+      image: "naeem",
+      fbProfile: "https://www.facebook.com/shajidnaim",
+    },
+    {
+      topic: "PHYSICS",
+      head: "Entropy",
+      body: "Murphy's Law নামে একটা law আছে।এতে বলা আছে, Things always tend to go wrong. মানে, সবকিছুই ভুল পথে যেতে চায়। এটা ফিজিক্সের ল না, দার্শনিক কথা এটা।কিন্তু, ফিজিক্সেও এর সত্যতা কম না।এন্ট্রপিও এমনই এক জিনিস।সোজা কথায়, এন্ট্রপি বাংলা হলো, বিশৃঙ্খলা।এন্ট্রপি বোঝাতে গিয়ে স্টিফেন হকিং তার ব্রিফ হিস্ট্রি অফ টাইম বইয়ে দারুণ একটা উদাহরণ দিয়েছেন।সেটা আমি তুলে ধরছি।",
+      fbLink:
+        "https://www.facebook.com/groups/aaloacademy/permalink/325773049043593",
+      author: "রুবাইয়াত ফেরদৌস আলভী",
+      rank: "Question Setter, Trainer",
+      image: "alvee",
+      fbProfile: "https://www.facebook.com/profile.php?id=100032305333803",
+    },
+    {
+      topic: "MATHEMATICS",
+      head: "অন্তরীকরণের যত কথা",
+      body: 'শুরুতেই বলা যাক ডিফারেন্সিয়াল ক্যলকুলাসের কাজ কি! স্পষ্টভাবে বলতে গেলে এর কাজ ঢাল বের করা।বইপত্রে ঢালের যে ডেফিনিশন টা আছে সেটা মোটামোটি এই রকম "কোন ফাংশনের এর কোন একটি বিন্দুতে অঙ্কিত স্পর্শক x অক্ষের ধনাত্মক দিকের সাথে যে কোণ করে তার  Tangent অনুপাত ওই ফাংশনের ওই পয়েন্টের ঢাল!সত্যি কথা বলতে আমার কাছে মনে হয় এটা ঢালের এমন একটা ডেফিনিশন যার মাধ্যমে ঢাল সম্পর্কে কোন ধারণাই পাওয়া যায় না!ঢাল জিনিসটাকে তাই একটু অন্যভাবে নাড়িয়ে আসা যাক!',
+      fbLink:
+        "https://www.facebook.com/groups/aaloacademy/permalink/325030642451167",
+      author: "Md Shahriar Kabir Nadim",
+      rank: "Member",
+      image: "nadim",
+      fbProfile: "https://www.facebook.com/mdshahriarkabir.nadim.9",
+    },
+    {
+      topic: "CHEMISTRY",
+      head: "Organic Chemistry Notes",
+      body: "ইন্টারমিডিয়েট লাইফে জৈব যৌগ নিয়ে অনেকেই সমস্যায় ভোগে। স্পেশালি নামধারী বিক্রিয়া আর গোছানোর অভাবে। আমি হাজারী স্যারের বইয়ের মোটামুটি সবগুলো বিক্রিয়াকে টপিক অনুযায়ী সাজিয়েছিলাম, আশা করছি তোমাদের কাজে লাগবে। ",
+      fbLink:
+        "https://www.facebook.com/groups/aaloacademy/permalink/324685579152340/",
+      author: "Tanvirul Islam Sajin",
+      rank: "CCO, Co-Founder",
+      image: "sajin",
+      fbProfile: "https://www.facebook.com/theSajin",
+    },
+    {
+      topic: "AALO",
+      head: "MIT Solve | Team Aalo",
+      body: "২০১৯ সালে MIT Solve এর স্টার্টাপ প্রতিযোগিতা Tiger Challenge এ সর্বকনিষ্ঠ ফাইনালিস্ট দল হয় Team Aalo! তাই ইন্টারন্যাশনালি স্বীকৃত একটা প্রতিষ্ঠান থেকে আরো সুন্দর সুন্দর কন্টেন্ট পেতে তুমি নিজেও থাকো, তোমার বন্ধুদেরও সাজেস্ট করো। সামনে অপেক্ষা করছে আরো বড় চমক!",
+      fbLink:
+        "https://www.facebook.com/groups/aaloacademy/permalink/324535772500654",
+      author: "Tanvirul Islam Sajin",
+      rank: "CCO, Co-Founder",
+      image: "sajin",
+      fbProfile: "https://www.facebook.com/theSajin",
+    },
+  ],
+  team: {
+    coreMembers: [
+      {
+        name: "Ranat Das Prangon",
+        image: "prangon",
+        rank: "CEO, Co-Founder",
+        fbProfile: "https://www.facebook.com/rdprangon",
+        Email: "ranatdasprangon@gmail.com",
+        number: "+8801715626571",
+      },
+      {
+        name: "Shajid Hasan Naeem",
+        image: "naeem",
+        rank: "CTO, Co-Founder",
+        fbProfile: "https://www.facebook.com/shajidnaim",
+        Email: "",
+        number: "+8801704996063",
+      },
+      {
+        name: "Tanvirul Islam Sajin",
+        image: "sajin",
+        rank: "CCO, Co-Founder",
+        fbProfile: "https://www.facebook.com/theSajin",
+        Email: "",
+        number: "+8801772299443",
+      },
+      {
+        name: "Wasif Islam Saad",
+        image: "wasif",
+        rank: "CMO, Co-Founder",
+        fbProfile: "facebook.com/wasifislamsaad",
+        Email: "Wisaad12@gmail.com",
+        number: "+8801791946148",
+      },
+      {
+        name: "Nahid Hassan Shovo",
+        image: "shovo",
+        rank: "CIO, Co-Founder",
+        fbProfile: "https://www.facebook.com/nahidhassan.shovo",
+        Email: "",
+        number: "+8801771912395",
+      },
+    ],
+    questionSetters: [
+      {
+        name: "Tasfia Rahman Urbi",
+        image: "urbi",
+        rank: "Question Setter, Trainer",
+        fbProfile: "https://www.facebook.com/tasfiarahman.urbi",
+        Email: "tasfiarahmanurbi@gmail.com",
+        phone: "",
+      },
+      {
+        name: "Arpita Roy Kumu",
+        image: "kumu",
+        rank: "Question Setter, Trainer",
+        fbProfile: "https://www.facebook.com/arpitaroy.kumu",
+        Email: "arpitaroykumu@gmail.com",
+        phone: "",
+      },
+    ],
   },
 };
 

@@ -5,5 +5,15 @@ import Button2 from "./Button2.svelte";
 import Exam from "./Exam.svelte";
 import Answer from "./Answer.svelte";
 import Leaderboard from "./Leaderboard.svelte";
+import DisabledBtn from "./DisabledBtn.svelte";
 
-export { Nav, SideNav, Button, Button2, Exam, Answer, Leaderboard };
+export {
+  Nav,
+  SideNav,
+  Button,
+  Button2,
+  Exam,
+  Answer,
+  Leaderboard,
+  DisabledBtn,
+};

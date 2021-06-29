@@ -56,7 +56,7 @@
                         <div class="p-4 lg:w-1/3 ">
                             <div on:click={()=> $goto(`/exams/admission/${courses[3].split(" ").join("")}`)} class="transition duration-300 transform hover:scale-110 ease-in-out h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-16 rounded-lg shadow-md overflow-hidden text-center relative">
                                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">ADMISSION</h2>
-                                <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">{courses[3]}</h1>
+                                <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">DU A-Unit Special</h1>
                                 <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                                 <a href={`/exams/admission/${courses[3].split(" ").join("")}`} class="text-primary font-semibold inline-flex items-center">Take Exam
                                     <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">

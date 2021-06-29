@@ -3,7 +3,7 @@
     import Sub from "./sub.svelte"
     export let course = 'course';
 
-    const courseName = course === 'DUSpecial' ? 'DU Special' : (course === 'VarsityStandard' ? 'Varsity Standard' : (course === 'EngineeringStandard' ? 'Engineering Standard' : 'Medical Standard'));
+    const courseName = course === 'DUSpecial' ? 'DU A-Unit Special' : (course === 'VarsityStandard' ? 'Varsity Standard' : (course === 'EngineeringStandard' ? 'Engineering Standard' : 'Medical Standard'));
 
     let state = 'phx1';
 </script>

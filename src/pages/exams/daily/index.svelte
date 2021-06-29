@@ -3,23 +3,25 @@ import {
     onDestroy
 } from "svelte"
 
-import store from "../../../../database/store"
+import store from "../../../database/store"
 import {
     Button,
     Exam,
     Answer,
-    Leaderboard
-} from "../../../../components"
+    Leaderboard,
+    DisabledBtn
+} from "../../../components"
 
 let page = 'index';
 
-export let examId;
 let data = {};
 const unsub = store.subscribe(db => {
     data = db;
 })
 
-let state = examId.split("_")[0];
+let examId = data.daily.examId;
+
+let state = data.daily.subId;
 
 onDestroy(() => {
     unsub();
@@ -39,24 +41,16 @@ let newIcon, icon = ["M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h
 
 ]
 
-function returnId(link) {
-    var linkArr = link.split("/");
-    linkArr.pop();
-    var filtered = linkArr[6].split('').filter(char => char !== '_');
-    console.log(filtered.join(""))
-    return filtered.join("");
-}
-
 newIcon = state === "phx1" ? icon[0] : (state === "phx2" ? icon[1] : (state === 'hm1' ? icon[2] : (state === 'hm2' ? icon[3] : (state === "chem1" ? icon[4] : icon[5]))));
 
-const examInfo = data.admission[window.location.pathname.split('/')[3]][examId.split("_")[0]].filter(xm => returnId(xm.link) === examId.split("_")[1])[0];
+const examInfo = data.daily;
 </script>
 
 <div>
     {#if page==='index' && examInfo}
     <div class="flex items-center lg:ml-20 lg:pl-1.5 lg:mt-14 mt-5 px-6">
         <div class="bg-primary w-2.5 h-2.5 -ml-1 mr-3 mt-1"></div>
-        <div class="title-font  sm:text-xl text-lg font-medium text-gray-900">{data.admission[window.location.pathname.split('/')[3]].course}</div>
+        <div class="title-font  sm:text-xl text-lg font-medium text-gray-900">Aalo Academy - Daily Exam</div>
     </div>
 
     <div class="flex flex-col lg:flex-row lg:items-baseline overflow-y-scroll lg:overflow-y-hidden items-center lg:px-10 px-4 mt-10 lg:-ml-8  w-auto h-100 lg:h-auto">
@@ -75,19 +69,23 @@ const examInfo = data.admission[window.location.pathname.split('/')[3]][examId.s
                 <p class="leading-relaxed text-base">Syllabus: {examInfo.syllabus}<br> Full Marks: {examInfo.marks} <br> Time: {examInfo.time}</p>
             </div>
         </section>
-        <div on:click={() => page='exam'} class="lg:ml-20  lg:mt-0 mt-16"><Button string="Take Exam" /></div>
-        <div on:click={() => page='leaderboard'} class="lg:ml-16  lg:mt-0 mt-4"><Button string="Leaderboard" /></div>
-        <div on:click={() => page='answer'} class="lg:ml-16  lg:mt-0 mt-4"><Button string="Show Answer" /></div>
-       
+        {#if localStorage.getItem(`${examId}-taken`)}
+        <div class="lg:ml-20  lg:mt-0 mt-16 cursor-not-allowed"><DisabledBtn string="Take Exam" /></div>
+        {:else}
+        <div on:click={() => page='exam'} class="lg:ml-20 lg:mt-0 mt-16"><Button string="Take Exam" /></div>
+        {/if}
+        <div on:click={() => page='answer'} class="lg:ml-16 lg:mt-0 mt-4"><Button string="Leaderboard" /></div>
+        <div on:click={() => page='leaderboard'} class="lg:ml-16 lg:mt-0 mt-4"><Button string="Show Answer" /></div>
+
     </div>
-
-    <div class="lg:ml-96 lg:-mt-28 lg:pl-32 xl:mr-96 lg:mr-48  rounded-lg bg-gray-100 lg:bg-white m-5 text-base p-6 -mt-16 pb-5  text-justify text-gray-900"><span class="text-primary font-semibold">NOTE: </span>You will get extra <span class="font-semibold">60 seconds</span> for filling up your name, email and other stuffs. And also you have to hit the submit button yourself before the time runs out. Remember, <span class="font-semibold">if the time runs out your answers won't get submitted automatically.</span></div>
-
+    {#if localStorage.getItem(`${examId}-taken`)}
+    <div class="lg:ml-96 lg:-mt-28 lg:pl-32 xl:mr-96 lg:mr-48 md:mr-0 text-lg px-5 -mt-16 pb-5 mr-0"><span class="text-primary font-semibold">NOTE: </span>This exam will be available in the <span class="font-semibold">HSC/Admission Preparation</span> section after 24 hours. Then you can take this exam as many times as you want.</div>
+    {/if}
     {:else if page==='exam'}
     <Exam link={examInfo.link} time={examInfo.time} examId={examId}/>
         {:else if page==='answer'}
         <Answer examInfo={examInfo}/>
-        {:else}
-        <Leaderboard examInfo={examInfo}/>
-        {/if}
-        </div>
+            {:else}
+            <Leaderboard examInfo={examInfo}/>
+                {/if}
+                </div>
