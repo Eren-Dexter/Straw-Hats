@@ -11,7 +11,7 @@
         </h1>
         <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
         <div class="flex flex-col xl:flex-row justify-center">
-          <Button on:click={() => $goto("/exams")} string="Exams" /> 
+          <Button on:click={() => $goto("/exams")} string="Take Exam" /> 
         </div>
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-2/3 w-5/6 md:mr-10 xl:mr-32">

@@ -37,7 +37,7 @@ let icon = ["M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 
 
 $: newIcon = state === "phx1" ? icon[0] : (state === "phx2" ? icon[1] : (state === 'hm1' ? icon[2] : (state === 'hm2' ? icon[3] : (state === "chem1" ? icon[4] : icon[5]))));
 
-$: newState = state === "phx1" ? "Physics 1st Paper" : (state === "phx2" ? 'Physics 2nd Paper' : (state === 'hm1' ? 'Higher Math 1st Paper' : (state === 'hm2' ? 'Higher Math 2nd' : (state === "chem1" ? 'Chemistry 1st paper' : 'Chemistry 2nd Paper'))));
+$: newState = state === "phx1" ? "Physics 1st Paper" : (state === "phx2" ? 'Physics 2nd Paper' : (state === 'hm1' ? 'Higher Math 1st Paper' : (state === 'hm2' ? 'Higher Math 2nd' : (state === "chem1" ? 'Chemistry 1st paper' : (state === 'chem2' ? 'Chemistry 2nd Paper' : (state === 'zoo' ? 'Zoology' : 'Botany'))))));
 
 function returnId(link) {
     var linkArr = link.split("/");
@@ -56,9 +56,16 @@ function returnId(link) {
     <section class="text-gray-600 body-font">
         <div on:click={$goto(`${window.location.pathname}/${state}_${returnId(sub.link)}`)} class="border relative border-gray-200 pl-6 pt-6 pb-6 pr-20 rounded-lg transition duration-300 transform hover:scale-105 ease-in-out cursor-pointer shadow-md">
             <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-red-100 text-red-500 mb-4">
+                {#if !state === 'zoo' || !state === 'bot'}
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
                     <path d={newIcon}></path>
                 </svg>
+                {:else if state=== 'bot'}
+                <svg class="h-6 w-6 text-red-600"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="3" width="8" height="14" rx="4" />  <rect x="12" y="7" width="8" height="10" rx="3" />  <line x1="8" y1="21" x2="8" y2="13" />  <line x1="16" y1="21" x2="16" y2="14" /></svg>
+                {:else}
+                <svg class="h-6 w-6 text-red-600"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3" />  <path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6" />  <path d="M12 11v2a14 14 0 0 0 2.5 8" />  <path d="M8 15a18 18 0 0 0 1.8 6" />  <path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95" /></svg>
+                {/if}
+               
             </div>
             {#if localStorage.getItem(`${state}_${returnId(sub.link)}-taken`)}
             <div class="absolute  top-8 right-5 text-base text-primary">Taken ✓</div>

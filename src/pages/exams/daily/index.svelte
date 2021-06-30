@@ -79,7 +79,9 @@ const examInfo = data.daily;
 
     </div>
     {#if localStorage.getItem(`${examId}-taken`)}
-    <div class="lg:ml-96 lg:-mt-28 lg:pl-32 xl:mr-96 lg:mr-48 md:mr-0 text-lg px-5 -mt-16 pb-5 mr-0"><span class="text-primary font-semibold">NOTE: </span>This exam will be available in the <span class="font-semibold">HSC/Admission Preparation</span> section after 24 hours. Then you can take this exam as many times as you want.</div>
+
+    <div class="lg:ml-96 lg:-mt-28 lg:pl-32 xl:mr-96 lg:mr-48  rounded-lg bg-gray-100 lg:bg-white m-5 text-base p-5 -mt-16 pb-5  text-justify text-gray-900"><span class="text-primary font-semibold">NOTE: </span>This exam will be available in the <span class="font-semibold">HSC/Admission Preparation</span> section after 24 hours. Then you can take this exam as many times as you want.</div>
+
     {/if}
     {:else if page==='exam'}
     <Exam link={examInfo.link} time={examInfo.time} examId={examId}/>
